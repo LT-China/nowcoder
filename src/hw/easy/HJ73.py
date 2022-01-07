@@ -6,15 +6,11 @@
 # @File    : HJ73.py
 # @Software: PyCharm
 
-from datetime import datetime
-import time
+import datetime
 
 def dateCal(temStr):
-    # print(temStr)
-    dayValue = datetime.strptime(temStr, '%Y-%m-%d')
-    print(dayValue)
-
-    return
+    tmpDate= datetime.datetime.strptime('-'.join(temStr.split()), '%Y-%m-%d').date()
+    print(int(tmpDate.strftime('%j')))
 
 while True:
     try:
