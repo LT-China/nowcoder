@@ -2,7 +2,12 @@
 # -*- coding: utf-8 -*-
 
 def maxBitNum(num):
-    numBin = bin(num)[2:]
-    print(numBin)
+    numBin = bin(num).replace('0b', '').split('0')
+    newNumBin = list(filter(None, numBin))
 
-maxBitNum(int(input()))
+    print(len(max(newNumBin)))
+while True:
+    try:
+        maxBitNum(int(input()))
+    except:
+        break
